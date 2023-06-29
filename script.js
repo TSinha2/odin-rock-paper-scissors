@@ -6,7 +6,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection)
 {
     playerSelection = playerSelection.toLowerCase()
-    computerSelection = getComputerChoice().toLowerCase()
+    computerSelection = computerSelection.toLowerCase()
 
     if (playerSelection == computerSelection)
     {
@@ -48,5 +48,32 @@ function playRound(playerSelection, computerSelection)
             return -1 // User lost 
         }        
     }    
+}
 
+function game()
+{
+    for (let i = 0; i < 5; i++)
+    {
+        playerSelection = prompt()
+        computerSelection = getComputerChoice()
+        outcome = playRound(playerSelection, computerSelection)
+        console.log("You chose " + playerSelection)
+        console.log("The computer chose " + computerSelection)
+
+        if (outcome == 1)
+        {
+            console.log("You won!")
+        }
+        if (outcome == -1)
+        {
+            console.log("You lost!")
+        }
+        if (outcome == 0)
+        {
+            console.log("You drew!")
+        }
+
+        
+
+    }
 }
