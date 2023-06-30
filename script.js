@@ -72,8 +72,37 @@ function game()
         {
             console.log("You drew!")
         }
-
-        
-
     }
 }
+
+const buttons = document.querySelectorAll('.opn');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    // alert(button.className.split(" ")[0]);
+    let humanChoice = button.className.split(" ")[0]
+    let compChoice = getComputerChoice()
+    output = playRound(humanChoice, compChoice)
+    let humanScore = document.getElementsByClassName("human-score")[0].innerText;
+    let compScore = document.getElementsByClassName("computer-score")[0].innerText;
+    let choiceStr = ` You chose ${humanChoice}, and the computer chose ${compChoice.toLowerCase()}.`
+    if (output === 1)
+    {
+        document.getElementsByClassName("human-score")[0].innerText = Number(humanScore) + 1 
+        document.getElementsByClassName("outcome-text")[0].innerText = "You won!" + choiceStr
+    }
+    if (output === -1)
+    {
+        document.getElementsByClassName("computer-score")[0].innerText = Number(compScore) + 1 
+        document.getElementsByClassName("outcome-text")[0].innerText = "You lost!" + choiceStr
+    }    
+    if (output === 0)
+    {
+        document.getElementsByClassName("computer-score")[0].innerText = Number(compScore) + 1 
+        document.getElementsByClassName("outcome-text")[0].innerText = "It's a tie!" + choiceStr
+    }    
+  });
+});
