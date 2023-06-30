@@ -101,7 +101,6 @@ buttons.forEach((button) => {
     }    
     if (output === 0)
     {
-        document.getElementsByClassName("computer-score")[0].innerText = Number(compScore) + 1 
         document.getElementsByClassName("outcome-text")[0].innerText = "It's a tie!" + choiceStr
     }    
   });
