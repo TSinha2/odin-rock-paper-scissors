@@ -20,7 +20,7 @@ img
     gap: 32px;
 }
 
-.title, .instr, .scores
+.title, .instr, .scores, .outcome-text
 {
     color: #142d4c;
     text-align: center;
@@ -47,5 +47,10 @@ img
 {
     font-size: 60px;
     font-weight: bolder;
+}
+
+.outcome-text
+{
+    font-size: 30px;
 }
 
